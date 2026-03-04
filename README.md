@@ -32,7 +32,7 @@ The architecture diagram is included below and used as the primary design artifa
 
 #### Azure Container Registry And Images
 ![Azure Container Registry - Placeholder](DiagramsAndScreenshots/azure-acr-image.png)
-![ACR Images](DiagramsAndScreenshots/arc-repo-images.png)
+![ACR Images](DiagramsAndScreenshots/arc_repo_images.png)
 
 #### Application Insights Overview
 ![Application Insights - Placeholder](DiagramsAndScreenshots/azure-app-insights.png)
