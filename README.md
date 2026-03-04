@@ -15,8 +15,11 @@ The architecture diagram is included below and used as the primary design artifa
 #### Resource Group And Deployed Services
 ![Azure Resource Group Overview - Placeholder](DiagramsAndScreenshots/azure-resource-group-overview.png)
 
-#### Azure Container Apps Configuration
+#### Azure Container App Configuration
 ![Azure Container Apps Settings - Placeholder](DiagramsAndScreenshots/azure-container-app-settings.png)
+
+#### Azure Container App Log Monitor
+![Application Insights - Placeholder](DiagramsAndScreenshots/azure-app-insights.png)
 
 #### Azure Key Vault Secrets And Access Policies
 ![Azure Key Vault Settings - Placeholder](DiagramsAndScreenshots/azure-key-vault-settings.png)
@@ -27,8 +30,9 @@ The architecture diagram is included below and used as the primary design artifa
 #### Azure Storage Account Configuration
 ![Azure Storage Settings - Placeholder](DiagramsAndScreenshots/azure-storage-settings.png)
 
-#### Azure Container Registry And Image
+#### Azure Container Registry And Images
 ![Azure Container Registry - Placeholder](DiagramsAndScreenshots/azure-acr-image.png)
+![ACR Images](DiagramsAndScreenshots/arc-repo-images.png)
 
 #### Application Insights Overview
 ![Application Insights - Placeholder](DiagramsAndScreenshots/azure-app-insights.png)
