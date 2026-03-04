@@ -1,0 +1,25 @@
+{
+  "case_id": "case_02",
+  "company_name": "Blue Dune Logistics LLC",
+  "legal_name": "Blue Dune Logistics L.L.C.",
+  "scenario": "expired_license",
+  "notes": "Trade license expired",
+  "expected_risk_signals": {
+    "license_expired": true,
+    "unaudited": false,
+    "net_loss": false,
+    "liabilities_gt_assets": false,
+    "conflicting_trn": false,
+    "board_resolution_incomplete": false,
+    "multiple_ubos": false
+  },
+  "documents": [
+    "trade_license.pdf",
+    "moa_aoa.pdf",
+    "board_resolution.pdf",
+    "ids.pdf",
+    "bank_letter.pdf",
+    "vat_trn.pdf",
+    "financial_statements.pdf"
+  ]
+}

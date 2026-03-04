@@ -1,0 +1,25 @@
+{
+  "case_id": "case_08",
+  "company_name": "Emirates Star Manufacturing LLC",
+  "legal_name": "Emirates Star Manufacturing L.L.C.",
+  "scenario": "multiple_ubos",
+  "notes": "Two UBOs listed in IDs doc",
+  "expected_risk_signals": {
+    "license_expired": false,
+    "unaudited": false,
+    "net_loss": false,
+    "liabilities_gt_assets": false,
+    "conflicting_trn": false,
+    "board_resolution_incomplete": false,
+    "multiple_ubos": true
+  },
+  "documents": [
+    "trade_license.pdf",
+    "moa_aoa.pdf",
+    "board_resolution.pdf",
+    "ids.pdf",
+    "bank_letter.pdf",
+    "vat_trn.pdf",
+    "financial_statements.pdf"
+  ]
+}

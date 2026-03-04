@@ -1,0 +1,25 @@
+{
+  "case_id": "case_05",
+  "company_name": "Marina Gulf Supplies LLC",
+  "legal_name": "Marina Gulf Supplies L.L.C.",
+  "scenario": "liabilities_exceed_assets",
+  "notes": "Solvency risk",
+  "expected_risk_signals": {
+    "license_expired": false,
+    "unaudited": false,
+    "net_loss": false,
+    "liabilities_gt_assets": true,
+    "conflicting_trn": false,
+    "board_resolution_incomplete": false,
+    "multiple_ubos": false
+  },
+  "documents": [
+    "trade_license.pdf",
+    "moa_aoa.pdf",
+    "board_resolution.pdf",
+    "ids.pdf",
+    "bank_letter.pdf",
+    "vat_trn.pdf",
+    "financial_statements.pdf"
+  ]
+}

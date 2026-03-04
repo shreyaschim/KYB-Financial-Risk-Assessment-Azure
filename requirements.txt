@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+pyodbc
+python-multipart
+azure-identity
+azure-keyvault-secrets
+azure-storage-blob==12.24.0
+pyOpenSSL
+certifi
+cryptography
+pypdf

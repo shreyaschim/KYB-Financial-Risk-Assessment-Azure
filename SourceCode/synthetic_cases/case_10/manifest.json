@@ -1,0 +1,25 @@
+{
+  "case_id": "case_10",
+  "company_name": "Crescent Bay Hospitality LLC",
+  "legal_name": "Crescent Bay Hospitality L.L.C.",
+  "scenario": "high_revenue_high_assets",
+  "notes": "Large scale audited company",
+  "expected_risk_signals": {
+    "license_expired": false,
+    "unaudited": false,
+    "net_loss": false,
+    "liabilities_gt_assets": false,
+    "conflicting_trn": false,
+    "board_resolution_incomplete": false,
+    "multiple_ubos": false
+  },
+  "documents": [
+    "trade_license.pdf",
+    "moa_aoa.pdf",
+    "board_resolution.pdf",
+    "ids.pdf",
+    "bank_letter.pdf",
+    "vat_trn.pdf",
+    "financial_statements.pdf"
+  ]
+}

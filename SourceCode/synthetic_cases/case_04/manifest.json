@@ -1,0 +1,25 @@
+{
+  "case_id": "case_04",
+  "company_name": "Skyline Tech Services LLC",
+  "legal_name": "Skyline Tech Services L.L.C.",
+  "scenario": "net_loss",
+  "notes": "Negative profitability",
+  "expected_risk_signals": {
+    "license_expired": false,
+    "unaudited": false,
+    "net_loss": true,
+    "liabilities_gt_assets": false,
+    "conflicting_trn": false,
+    "board_resolution_incomplete": false,
+    "multiple_ubos": false
+  },
+  "documents": [
+    "trade_license.pdf",
+    "moa_aoa.pdf",
+    "board_resolution.pdf",
+    "ids.pdf",
+    "bank_letter.pdf",
+    "vat_trn.pdf",
+    "financial_statements.pdf"
+  ]
+}
