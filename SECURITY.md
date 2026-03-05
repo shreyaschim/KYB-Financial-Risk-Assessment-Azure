@@ -88,6 +88,39 @@ Document → Extracted Fields → Evidence Snippets → Risk Indicators → Revi
 
 This ensures that every risk assessment outcome can be traced back to the underlying source documents and extracted evidence, supporting regulatory compliance and audit requirements.
 
+## Identity & Access Governance (Future Production Design)
+
+### SSO & Centralized Identity
+
+Production deployment would integrate with Azure Entra ID (OIDC/OAuth2).
+
+- All API requests validated via JWT
+- Role claims enforce RBAC
+- No static credentials in application layer
+
+### Segregation of Duties (SoD)
+
+The system supports Maker-Checker separation:
+
+- MAKER cannot finalize cases
+- CHECKER must approve/reject
+- All decisions logged with reviewer identity
+- Finalized records become immutable
+
+### Infrastructure Security
+
+- SQL & Storage access via Managed Identity
+- Private Endpoints for network isolation
+- TrustServerCertificate awareness during development
+- Defender for Cloud monitoring enabled
+
+### Audit Integrity
+
+- Correlation-based event tracking
+- Immutable audit_events table
+- Rationale storage for scoring decisions
+- Attestation text permanently logged
+
 ## Dependency And Supply Chain Security
 
 - Pin dependencies where possible.

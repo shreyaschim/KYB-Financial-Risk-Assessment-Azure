@@ -110,7 +110,38 @@ Sample response:
 }
 ```
 
-### 4) Review Snapshot
+### 4) Bulk Ingest Documents
+**POST** `/ingest/bulk` (form-data)
+
+Sample request:
+```bash
+curl -X POST "$BASE/ingest/bulk" \
+  -F "company_id=9b9fa2f6-80d0-4b9d-9c3e-2e511d2fa0bb" \
+  -F "files=@SourceCode/synthetic_data/case_01/trade_license.pdf" \
+  -F "files=@SourceCode/synthetic_data/case_01/financial_statements.pdf"
+```
+
+Sample response:
+```json
+{
+  "company_id": "9b9fa2f6-80d0-4b9d-9c3e-2e511d2fa0bb",
+  "total_files": 2,
+  "results": [
+    {
+      "file_name": "trade_license.pdf",
+      "status": "success",
+      "document_id": "7716f4ce-3968-417e-903f-cd14d916b795"
+    },
+    {
+      "file_name": "financial_statements.pdf",
+      "status": "success",
+      "document_id": "fbcf29ba-0645-46bb-a58f-a3450ea3e7e3"
+    }
+  ]
+}
+```
+
+### 5) Review Snapshot
 **GET** `/review/{company_id}`
 
 Sample request:
@@ -133,7 +164,7 @@ Sample response (truncated):
 }
 ```
 
-### 5) Apply Manual Edit
+### 6) Apply Manual Edit
 **POST** `/review/edit` (form-data)
 
 Sample request:
@@ -155,7 +186,7 @@ Sample response:
 }
 ```
 
-### 6) Human Review Confirmation
+### 7) Human Review Confirmation
 **POST** `/review/confirm` (form-data)
 
 Sample request:
@@ -175,7 +206,7 @@ Sample response:
 }
 ```
 
-### 7) Run Risk Assessment
+### 8) Run Risk Assessment
 **POST** `/risk-assessment/{company_id}`
 
 Sample request:
@@ -232,6 +263,43 @@ Note: Observability tools such as Azure Application Insights were intentionally 
 - `ACR -> Container App` (`AcrPull`)
 - `Container App -> Application Insights` (`Telemetry / Logs`)
 - `Container App -> SQL Database` (`Audit Event Logging`)
+
+## Enterprise Architecture Extension (Future State)
+
+This solution is designed to evolve into a full Maker-Checker regulatory workflow platform.
+
+### Role-Based Access & SSO
+
+In production, authentication would integrate with Azure Entra ID (SSO via OIDC).  
+Role-based access control (RBAC) would enforce Least-Privilege principles:
+
+- MAKER - Document upload & scoring trigger
+- CHECKER - Review and decision authority
+- COMPLIANCE_ADMIN - Override & governance
+- AUDITOR - Read-only finalized cases
+
+Authorization would be enforced via JWT claim validation at API layer.
+
+### Maker-Checker Workflow
+
+Proposed case lifecycle:
+
+`INGESTED -> SCORING_COMPLETE -> PENDING_REVIEW -> APPROVED | REJECTED`
+
+Rules:
+- Makers cannot approve their own submissions.
+- All approvals require reviewer identity & remarks.
+- Finalized cases are immutable and read-only.
+
+### Audit & Traceability
+
+Each lifecycle stage is linked via `correlation_id`, enabling:
+
+- Full traceability from ingestion to approval
+- Immutable audit trail in `audit_events`
+- Explainable scoring stored in `risk_assessments`
+
+This architecture aligns with AML/KYB governance expectations.
 
 ## Repository Structure
 

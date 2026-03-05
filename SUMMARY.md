@@ -129,7 +129,39 @@ Risk drivers explaining the score are stored in the response and risk report.
 
 ---
 
-# 4. Known Limitations
+# 4. Governance & Compliance Maturity
+
+The solution follows a conservative, deduction-based risk model to ensure explainability and regulatory defensibility.
+
+### Risk Scoring Logic
+
+- Base Score: 100
+- Missing Financial Statements: -40
+- Expired Trade License: -50
+- Deterministic band assignment (LOW / MEDIUM / HIGH)
+
+All rationale is persisted for audit reconstruction.
+
+### Human-in-the-Loop Control
+
+A regulatory attestation endpoint ensures that:
+- A named reviewer confirms the extracted information.
+- The confirmation is permanently logged in `audit_events`.
+- Decisions are traceable and timestamped.
+
+### Future Enterprise Extension
+
+The architecture supports extension into:
+- Maker-Checker role segregation
+- SSO-based access control
+- Case lifecycle state enforcement
+- Immutable review decision tracking
+
+This ensures readiness for deployment within regulated financial institutions.
+
+---
+
+# 5. Known Limitations
 
 This implementation is a **demonstration system** and includes several limitations:
 
@@ -161,7 +193,7 @@ Large-scale production deployments would typically use:
 
 ---
 
-# 5. High-Level Azure Cost Estimate
+# 6. High-Level Azure Cost Estimate
 
 Estimated monthly cost for a **small production-like workload**:
 
