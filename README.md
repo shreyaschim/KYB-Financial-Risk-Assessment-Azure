@@ -10,7 +10,7 @@ The architecture diagram is included below and used as the primary design artifa
 
 ## Demo Video
 
-[Watch Demo Video](DemoVideo.mp4)
+[Watch Demo Video on YouTube](https://youtu.be/9EzYvAl3zG4)
 
 ## Implementation Evidence (Screenshots)
 
