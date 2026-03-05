@@ -8,6 +8,10 @@ The architecture diagram is included below and used as the primary design artifa
 
 ![KYB Risk Assessment Architecture](architecture.png)
 
+## Demo Video
+
+[Watch Demo Video](DemoVideo.mp4)
+
 ## Implementation Evidence (Screenshots)
 
 ### Azure Implementation
